@@ -1,0 +1,136 @@
+[17-Oct-2022 15:10:42 UTC] auditor:event=switch_theme {"new_name":"MarisPlace Custom Theme","blog_id":1,"event":"switch_theme","current_user_id":6,"remote_addr":"1.38.177.93"}
+[17-Oct-2022 15:16:44 UTC] PHP Warning:  exif_read_data(Fill-in-adjectives2-1-1-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:16:45 UTC] PHP Warning:  exif_read_data(opposite4-1-1-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:16:46 UTC] PHP Warning:  exif_read_data(opposite3-1-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:16:48 UTC] PHP Warning:  exif_read_data(opposite2-1-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:45:27 UTC] PHP Warning:  exif_read_data(7-july-booklet-thumbnail1-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:47:35 UTC] PHP Warning:  exif_read_data(5-May-thumbnail-1editedre-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:48:19 UTC] PHP Warning:  exif_read_data(thumbnail-1editedre-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:48:23 UTC] PHP Warning:  exif_read_data(thumbnail-1-yellow-resized-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:48:25 UTC] PHP Warning:  exif_read_data(thumbnail-1-yellow-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:50:00 UTC] PHP Warning:  exif_read_data(Karen-Francis-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:50:00 UTC] PHP Warning:  exif_read_data(Kay-Marte-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:50:04 UTC] PHP Warning:  exif_read_data(Maria-Brady-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:50:06 UTC] PHP Warning:  exif_read_data(Printed-Daily-Activities-Thumbnail-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 15:50:15 UTC] PHP Warning:  exif_read_data(Activity-Box-Thumbnail-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:27:33 UTC] auditor:event=switch_theme {"new_name":"Twenty Twenty","blog_id":1,"event":"switch_theme","current_user_id":6,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:28:11 UTC] auditor:event=switch_theme {"new_name":"Twenty Twenty","blog_id":1,"event":"switch_theme","current_user_id":6,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:35:00 UTC] PHP Warning:  exif_read_data(Fill-in-adjectives2-1-1-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:35:00 UTC] PHP Warning:  exif_read_data(opposite4-1-1-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:35:01 UTC] PHP Warning:  exif_read_data(opposite3-1-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:35:02 UTC] PHP Warning:  exif_read_data(opposite2-1-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:37:36 UTC] PHP Warning:  exif_read_data(7-july-booklet-thumbnail1-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:38:38 UTC] auditor:event=switch_theme {"new_name":"MarisPlace Custom Theme","blog_id":1,"event":"switch_theme","current_user_id":6,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:38:42 UTC] PHP Warning:  exif_read_data(5-May-thumbnail-1editedre-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:39:15 UTC] PHP Warning:  exif_read_data(thumbnail-1editedre-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:39:19 UTC] PHP Warning:  exif_read_data(thumbnail-1-yellow-resized-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:39:21 UTC] PHP Warning:  exif_read_data(thumbnail-1-yellow-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:40:55 UTC] PHP Warning:  exif_read_data(Karen-Francis-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:40:56 UTC] PHP Warning:  exif_read_data(Kay-Marte-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:40:59 UTC] PHP Warning:  exif_read_data(Maria-Brady-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:41:01 UTC] PHP Warning:  exif_read_data(Printed-Daily-Activities-Thumbnail-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:41:11 UTC] PHP Warning:  exif_read_data(Activity-Box-Thumbnail-1.jpg): Incorrect APP1 Exif Identifier Code in /nas/content/live/mp41dev/wp-admin/includes/image.php on line 846
+[17-Oct-2022 16:44:12 UTC] auditor:event=add_user_role {"user_id":651,"role":"subscriber","blog_id":1,"event":"add_user_role","current_user_id":0,"remote_addr":"23.243.157.106"}
+[17-Oct-2022 16:44:12 UTC] auditor:event=set_user_role {"user_id":651,"role":"subscriber","old_roles":[],"blog_id":1,"event":"set_user_role","current_user_id":0,"remote_addr":"23.243.157.106"}
+[17-Oct-2022 16:44:12 UTC] auditor:event=user_register {"user_id":651,"blog_id":1,"event":"user_register","current_user_id":0,"remote_addr":"23.243.157.106"}
+[17-Oct-2022 16:44:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pmpro_changeMembershipLevel() in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php:930
+Stack trace:
+#0 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(309): my_pmpro_default_registration_level(651)
+#1 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_filters(false, Array)
+#2 /nas/content/live/mp41dev/wp-includes/plugin.php(476): WP_Hook->do_action(Array)
+#3 /nas/content/live/mp41dev/wp-includes/user.php(2465): do_action('user_register', 651, Array)
+#4 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/frontend/class-ur-frontend-form-handler.php(98): wp_insert_user(Array)
+#5 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/class-ur-ajax.php(200): UR_Frontend_Form_Handler::handle_form(Array, 34864)
+#6 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(307): UR_AJAX::user_form_submit('')
+#7 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_f in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php on line 930
+[17-Oct-2022 16:47:30 UTC] auditor:event=add_user_role {"user_id":652,"role":"subscriber","blog_id":1,"event":"add_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:47:30 UTC] auditor:event=set_user_role {"user_id":652,"role":"subscriber","old_roles":[],"blog_id":1,"event":"set_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:47:30 UTC] auditor:event=user_register {"user_id":652,"blog_id":1,"event":"user_register","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:47:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pmpro_changeMembershipLevel() in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php:930
+Stack trace:
+#0 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(309): my_pmpro_default_registration_level(652)
+#1 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_filters(false, Array)
+#2 /nas/content/live/mp41dev/wp-includes/plugin.php(476): WP_Hook->do_action(Array)
+#3 /nas/content/live/mp41dev/wp-includes/user.php(2465): do_action('user_register', 652, Array)
+#4 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/frontend/class-ur-frontend-form-handler.php(98): wp_insert_user(Array)
+#5 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/class-ur-ajax.php(200): UR_Frontend_Form_Handler::handle_form(Array, 34864)
+#6 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(307): UR_AJAX::user_form_submit('')
+#7 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_f in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php on line 930
+[17-Oct-2022 16:50:16 UTC] auditor:event=add_user_role {"user_id":653,"role":"subscriber","blog_id":1,"event":"add_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:50:16 UTC] auditor:event=set_user_role {"user_id":653,"role":"subscriber","old_roles":[],"blog_id":1,"event":"set_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:50:16 UTC] auditor:event=user_register {"user_id":653,"blog_id":1,"event":"user_register","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:50:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pmpro_changeMembershipLevel() in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php:930
+Stack trace:
+#0 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(309): my_pmpro_default_registration_level(653)
+#1 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_filters(false, Array)
+#2 /nas/content/live/mp41dev/wp-includes/plugin.php(476): WP_Hook->do_action(Array)
+#3 /nas/content/live/mp41dev/wp-includes/user.php(2465): do_action('user_register', 653, Array)
+#4 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/frontend/class-ur-frontend-form-handler.php(98): wp_insert_user(Array)
+#5 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/class-ur-ajax.php(200): UR_Frontend_Form_Handler::handle_form(Array, 34864)
+#6 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(307): UR_AJAX::user_form_submit('')
+#7 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_f in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php on line 930
+[17-Oct-2022 16:51:04 UTC] auditor:event=add_user_role {"user_id":654,"role":"subscriber","blog_id":1,"event":"add_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:51:04 UTC] auditor:event=set_user_role {"user_id":654,"role":"subscriber","old_roles":[],"blog_id":1,"event":"set_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:51:04 UTC] auditor:event=user_register {"user_id":654,"blog_id":1,"event":"user_register","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:51:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pmpro_changeMembershipLevel() in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php:930
+Stack trace:
+#0 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(309): my_pmpro_default_registration_level(654)
+#1 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_filters(false, Array)
+#2 /nas/content/live/mp41dev/wp-includes/plugin.php(476): WP_Hook->do_action(Array)
+#3 /nas/content/live/mp41dev/wp-includes/user.php(2465): do_action('user_register', 654, Array)
+#4 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/frontend/class-ur-frontend-form-handler.php(98): wp_insert_user(Array)
+#5 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/class-ur-ajax.php(200): UR_Frontend_Form_Handler::handle_form(Array, 34864)
+#6 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(307): UR_AJAX::user_form_submit('')
+#7 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_f in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php on line 930
+[17-Oct-2022 16:51:56 UTC] auditor:event=add_user_role {"user_id":655,"role":"subscriber","blog_id":1,"event":"add_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:51:56 UTC] auditor:event=set_user_role {"user_id":655,"role":"subscriber","old_roles":[],"blog_id":1,"event":"set_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:51:56 UTC] auditor:event=user_register {"user_id":655,"blog_id":1,"event":"user_register","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:51:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pmpro_changeMembershipLevel() in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php:930
+Stack trace:
+#0 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(309): my_pmpro_default_registration_level(655)
+#1 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_filters(false, Array)
+#2 /nas/content/live/mp41dev/wp-includes/plugin.php(476): WP_Hook->do_action(Array)
+#3 /nas/content/live/mp41dev/wp-includes/user.php(2465): do_action('user_register', 655, Array)
+#4 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/frontend/class-ur-frontend-form-handler.php(98): wp_insert_user(Array)
+#5 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/class-ur-ajax.php(200): UR_Frontend_Form_Handler::handle_form(Array, 34864)
+#6 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(307): UR_AJAX::user_form_submit('')
+#7 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_f in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php on line 930
+[17-Oct-2022 16:52:34 UTC] auditor:event=add_user_role {"user_id":656,"role":"subscriber","blog_id":1,"event":"add_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:52:34 UTC] auditor:event=set_user_role {"user_id":656,"role":"subscriber","old_roles":[],"blog_id":1,"event":"set_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:52:34 UTC] auditor:event=user_register {"user_id":656,"blog_id":1,"event":"user_register","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:52:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pmpro_changeMembershipLevel() in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php:930
+Stack trace:
+#0 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(309): my_pmpro_default_registration_level(656)
+#1 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_filters(false, Array)
+#2 /nas/content/live/mp41dev/wp-includes/plugin.php(476): WP_Hook->do_action(Array)
+#3 /nas/content/live/mp41dev/wp-includes/user.php(2465): do_action('user_register', 656, Array)
+#4 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/frontend/class-ur-frontend-form-handler.php(98): wp_insert_user(Array)
+#5 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/class-ur-ajax.php(200): UR_Frontend_Form_Handler::handle_form(Array, 34864)
+#6 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(307): UR_AJAX::user_form_submit('')
+#7 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_f in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php on line 930
+[17-Oct-2022 16:53:40 UTC] auditor:event=add_user_role {"user_id":657,"role":"subscriber","blog_id":1,"event":"add_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:53:40 UTC] auditor:event=set_user_role {"user_id":657,"role":"subscriber","old_roles":[],"blog_id":1,"event":"set_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:53:40 UTC] auditor:event=user_register {"user_id":657,"blog_id":1,"event":"user_register","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:53:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pmpro_changeMembershipLevel() in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php:930
+Stack trace:
+#0 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(309): my_pmpro_default_registration_level(657)
+#1 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_filters(false, Array)
+#2 /nas/content/live/mp41dev/wp-includes/plugin.php(476): WP_Hook->do_action(Array)
+#3 /nas/content/live/mp41dev/wp-includes/user.php(2465): do_action('user_register', 657, Array)
+#4 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/frontend/class-ur-frontend-form-handler.php(98): wp_insert_user(Array)
+#5 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/class-ur-ajax.php(200): UR_Frontend_Form_Handler::handle_form(Array, 34864)
+#6 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(307): UR_AJAX::user_form_submit('')
+#7 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_f in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php on line 930
+[17-Oct-2022 16:56:35 UTC] auditor:event=add_user_role {"user_id":658,"role":"subscriber","blog_id":1,"event":"add_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:56:35 UTC] auditor:event=set_user_role {"user_id":658,"role":"subscriber","old_roles":[],"blog_id":1,"event":"set_user_role","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:56:35 UTC] auditor:event=user_register {"user_id":658,"blog_id":1,"event":"user_register","current_user_id":0,"remote_addr":"103.105.235.241"}
+[17-Oct-2022 16:56:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pmpro_changeMembershipLevel() in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php:936
+Stack trace:
+#0 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(309): my_pmpro_default_registration_level(658)
+#1 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_filters(false, Array)
+#2 /nas/content/live/mp41dev/wp-includes/plugin.php(476): WP_Hook->do_action(Array)
+#3 /nas/content/live/mp41dev/wp-includes/user.php(2465): do_action('user_register', 658, Array)
+#4 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/frontend/class-ur-frontend-form-handler.php(98): wp_insert_user(Array)
+#5 /nas/content/live/mp41dev/wp-content/plugins/user-registration/includes/class-ur-ajax.php(200): UR_Frontend_Form_Handler::handle_form(Array, 34864)
+#6 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(307): UR_AJAX::user_form_submit('')
+#7 /nas/content/live/mp41dev/wp-includes/class-wp-hook.php(331): WP_Hook->apply_f in /nas/content/live/mp41dev/wp-content/themes/MariasPlace/functions.php on line 936
