@@ -59,7 +59,7 @@ body {
     font-family: 'Nunito', sans-serif;
     margin: 0;
     font-size: 1.25rem;
-    line-height: 1.3;
+    line-height: 1.6;
     color: #333;
     -webkit-font-smoothing: auto;
 }
@@ -228,6 +228,198 @@ h3.widget-title {
 /*--------------------------------------------------------------
 ## Heading/Titles
 --------------------------------------------------------------*/
+
+.entry-header, .nav_crumb{
+  display: none;
+}
+.et-db #et-boc .et-l .et_pb_section .et_pb_row{
+  width: 100% !important;
+}
+.home-first-section .et_pb_column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.splash-cta-btn {
+    padding: 35px 15% !important;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) !important;
+    background: #DE005D !important;
+    color: #fff !important;
+    border: 2px solid #DE005D !important;
+    font-size: 1.5rem !important;
+    transition: 0.6s !important;
+    border-radius: 10px !important;
+  overflow: hidden;
+  line-height: 0px !important;
+  display: inline-flex;
+}
+.splash-cta-btn:hover {
+    background: transparent !important;
+}
+.is-secondary:hover{
+    border: 1px solid #322876 !important;
+    background: #322876 !important;
+    box-shadow: 0px 8px 12px 0px rgba(50, 40, 118, 60) !important;
+    color: #fff !important;
+    transform: scale(1.1) !important;
+    top: -5px;
+}
+
+.activities .activity:before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    transition: 2s;
+    width: 100%;
+    height: 100%;
+}
+.activities .columns{
+  display:flex;
+  flex-wrap: wrap;
+}
+.activities .columns .column{
+  padding: .75rem !important;
+}
+.activity-title-img span {
+    font-size: 30px;
+    display: block;
+    margin: auto 15px !important;
+    color: #000 !important;
+    line-height: 1;
+    font-weight: bold;
+    width: 50%;
+}
+.column.is-4, .column.is-4-tablet{
+  flex: none;
+  width: 33.33333%;
+}
+@media (max-width: 1000px) {
+.column.is-4, .column.is-4-tablet{
+  width: 50%;
+}
+}
+
+.activities .activity{
+    background-color: #fff !important;
+  transition: 3s !important;
+padding: 2.5rem !important;
+height: 320px !important;
+border-radius: 20px !important;
+position: relative !important;
+overflow: hidden !important;
+}
+.activity-title-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px !important;
+}
+.activity p {
+    font-size: 24px !important;
+    color: #000 !important;
+}
+.quizzes {
+	border: 6px solid rgb(255,220,61) !important;
+}
+.quizzes:hover {
+	background: rgba(255,220,61,0.7) !important;
+}
+.crafts {
+	border: 6px solid rgb(118,184,242) !important;
+}
+.crafts:hover {
+	background: rgba(118,184,242,0.7) !important;
+}
+.word-games {
+	border: 6px solid rgb(236,170,206) !important;
+}
+.word-games:hover {
+	background: rgba(236,170,206,0.7) !important;
+}
+.coloring {
+	border: 6px solid rgb(118,184,242) !important;
+}
+.coloring:hover {
+	background: rgba(118,184,242,0.7) !important;
+}
+.seasonal {
+	border: 6px solid rgb(255,61,119) !important;
+}
+.seasonal:hover {
+	background: rgba(255,61,119,0.7) !important;
+}
+.caregiver-stories {
+	border: 6px solid rgb(118,184,242) !important;
+}
+.caregiver-stories:hover {
+	background: rgb(181,220,255) !important;
+}
+.buttons a.outline-btn {
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    padding: 20px 35px !important;
+    border-radius: 10px !important;
+}
+.buttons a.button:not(:last-child):not(.is-fullwidth){
+  margin-right: 1.5rem !important;
+}
+@media (max-width: 540px) {
+ .buttons a.button:not(:last-child):not(.is-fullwidth){
+  margin-right: 0rem !important;
+   margin-bottom: 1rem !important;
+}
+}
+.button.outline-btn.is-primary {
+    background-color: transparent !important;
+    border: 2px solid !important;
+    color: #DE005D !important;
+  display: inline-flex;
+  line-height: .5 !important;
+}
+.button.outline-btn.is-primary:hover {
+    border: 2px solid #DE005D !important;
+}
+.buttons a.is-primary.sign-up {
+    background: #322876;
+    color: #fff;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    padding: 20px 35px !important;
+    border-radius: 10px !important;
+    border: 2px solid #322876;
+    display: inline-flex;
+  line-height: .7 !important;
+}
+@media (max-width: 540px) {
+  .activities .columns .column{
+    padding: 0.5rem !important;
+  }
+  .activities .activity{
+    padding: 15px 5px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .activity .activity-title-img img{
+    height: 50px;
+    width: 50px;
+  }
+  .activity .activity-title-img{
+    flex-direction: column;
+    align-items: center;
+  }
+  .activity-title-img span{
+    width: 100%;
+    text-align: center !important;
+    font-size: 1.2rem;
+  }
+  .activity p{
+    font-size: 1rem !important;
+  }
+}
+
+
 #page .section-main-title{
     font-size: 3.25rem;
     line-height: 1.25;
@@ -291,6 +483,11 @@ h3.widget-title {
 }
 .text-navyblue {
     color: #322876;
+}
+.welcome_letter {
+	font-size: 1.5rem;
+	max-width: 60rem;
+	min-width: 15rem;
 }
 /*--------------------------------------------------------------
 ## Buttons
@@ -1905,6 +2102,7 @@ ul#social li {
     /* GRID STYLE */
     .grid-3 {
         grid-template-columns: 1fr 1fr 1fr;
+		padding: 0 1.5rem !important;
     }
     /* GRID STYLE */
     #masthead #menu-new-top-menu > li.menu-item {
@@ -2169,6 +2367,7 @@ ul#social li {
     }
     .grid-3 {
         grid-template-columns: 1fr 1fr;
+		padding: 0 1.5rem !important;
     }
     .single-post #content .archive  .grid-3 {
         grid-template-columns: 1fr 1fr 1fr;
@@ -2288,6 +2487,7 @@ ul#social li {
     body #content .grid-3,
     #footer-promotion .grid-3 {
         grid-template-columns: 1fr;
+		padding: 0 1rem !important;
     }
     #get-social .get-social-text{
         padding: 3rem;
@@ -2374,6 +2574,7 @@ ul#social li {
     }
     body #content .grid-3 {
         grid-template-columns: 1fr 1fr;
+		padding: 0 1rem !important;
     }
     .banner .vc_col-sm-6:not(.banner-text){
         min-height: 600px; 
@@ -3145,6 +3346,10 @@ div#footer-promotion:before {
 	padding-left:0px;
 	padding-right:0px;
 }
+
+.free-library h2 {
+    font-size: 24px !important;
+}
 .collapse.navbar-collapse.justify-content-md-center, .navbar-nav.pull-right{
     height:100%;
 }
@@ -3444,6 +3649,7 @@ p.item-maintext{
 .woocommerce-form__input.woocommerce-form__input-radio.input-radio {
     margin-right: 0.75rem;
 }
+
 /* div.nav_crumb a:nth-child(3) {
     pointer-events: none;
 } */

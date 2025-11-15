@@ -13,13 +13,13 @@
 /wp-includes/
 /index.php
 /license.txt
-/staging/
 /readme.html
 /wp-*.php
 /xmlrpc.php
 
 # Configuration
 wp-config.php
+.secrets
 
 # Example themes
 /wp-content/themes/twenty*/
@@ -29,39 +29,32 @@ wp-config.php
 
 # Uploads
 /wp-content/uploads/
-/wp-content/updraft/
-/wp-content/mu-plugins*/
 
 # Log files
 *.log
-*.png
-*.svg
-*.jpg
-*.ttf
-*.woff*
-*.eot
 
-/wp-content/mysql*.sql
+# Cache files
+wp-content/.litespeed_conf.dat
+wp-content/advanced-cache.php
+wp-content/object-cache.php
+wp-content/litespeed/
+wp-content/mu-plugins/
+*.cache
 
-# htaccess - hidden for security
+# htaccess
 /.htaccess
-
-# Cache
-/wp-content/cache/*
-/wp-content/et-cache/*
+.htaccess.backup-*
+.htaccess.restored
+.htaccess.restored.backup-*
 
 # All plugins
 #
 # Note: If you wish to whitelist plugins,
 # uncomment the next line
-/wp-content/plugins
+#/wp-content/plugins
 
 # All themes
 #
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
-
-# System
-.DS_Store
-.nova/

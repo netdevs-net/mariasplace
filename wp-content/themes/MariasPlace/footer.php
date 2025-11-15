@@ -14,10 +14,10 @@
   !is_page_template("blank-page.php") &&
   !is_page_template("blank-page-with-container.php")
 ): ?>
-    <?php if (!is_product()): ?>
-    </div><!-- .row -->
-    </div><!-- .container -->
-    <?php endif; ?>
+    <?php //if (!is_product()): ?>
+    <!--</div>-->
+    <!--</div>-->
+    <?php //endif; ?>
     </div><!-- #content -->
     <?php get_template_part("footer-widget"); ?>
     <footer id="colophon" class="site-footer bg-light">
@@ -114,98 +114,84 @@ $("input[name='_wp_http_referer']").val(ref_ul);
 }
 ?>
 <script type="text/javascript">
-jQuery(document).ready(function () {
-    <?php if(isset($_GET['url'])){ ?>
-        const urlParam = "<?php echo htmlspecialchars($_GET['url'], ENT_QUOTES, 'UTF-8'); ?>";
-        const ref_ul = `/${urlParam}/`;
+    jQuery(document).ready(function () {
+
+
+        var ref_ul="/<?php echo $_GET["url"]?>/";
         jQuery("input[name='ur-redirect-url']").val(window.location.pathname);
         jQuery("input[name='_wp_http_referer']").val(ref_ul);
-    <?php }?>
-
-    jQuery("#teamMemberBio").click(function () {
-        jQuery('#teamMemberBio').modal('hide');
-        jQuery('#magicMouseCursor').remove();
-        jQuery('#magicPointer').remove();
-        jQuery('body').css("cursor", "auto");
+        // document.getElementsByName("ur-redirect-url").value=window.location.pathname;
+        jQuery("#teamMemberBio").click(function () {
+            jQuery('#teamMemberBio').modal('hide');
+            jQuery('#magicMouseCursor').remove();
+            jQuery('#magicPointer').remove();
+            jQuery('body').attr("style", "cursor: auto");
+        });
+        jQuery(document).on('click', 'div[id^=team-]', function () {
+            jQuery('#teamMemberBio .team_member_details .bio-inner .team-desc').text('');
+            options = {
+                "cursorOuter": "circle-basic",
+                "hoverEffect": "circle-move",
+                "hoverItemMove": false,
+                "defaultCursor": false,
+                "outerWidth": 75,
+                "outerHeight": 75
+            };
+            magicMouse(options);
+            jQuery('#magicMouseCursor').addClass('fa fa-times');
+            var curentimg = jQuery(this).find("div").children("img");
+            var curentposition = jQuery(this).find("span").text();
+            var curentname = jQuery(this).find("h3").html();
+            var curentid = jQuery(this).attr("id");
+            var tid = curentid.split("-")[1];
+            var templatedir = jQuery(this).find("div").text();
+            var curentimg = jQuery(this).find("div.pic").html();
+            var content = jQuery(this).find('div.templatedir').html();
+            jQuery('#teamMemberBio .team_member_details .bio-inner h1').text(curentname);
+            jQuery('#teamMemberBio .team_member_details .bio-inner .title').text(curentposition);
+            jQuery('#teamMemberBio div.team_member_picture div.team_member_image').empty();
+            jQuery('#teamMemberBio div.team_member_picture div.team_member_image').append(curentimg);
+            jQuery('#teamMemberBio .team_member_details .bio-inner .team-desc').html(content);
+        });
     });
-
-    jQuery(document).on('click', 'div[id^=team-]', function () {
-        const teamBio = jQuery('#teamMemberBio .team_member_details .bio-inner .team-desc');
-        teamBio.text('');
-
-        const options = {
-            "cursorOuter": "circle-basic",
-            "hoverEffect": "circle-move",
-            "hoverItemMove": false,
-            "defaultCursor": false,
-            "outerWidth": 75,
-            "outerHeight": 75
-        };
-        magicMouse(options);
-
-        jQuery('#magicMouseCursor').addClass('fa fa-times');
-
-        const currentElement = jQuery(this);
-        const currentImg = currentElement.find("div.pic").html();
-        const currentPosition = currentElement.find("span").text();
-        const currentName = currentElement.find("h3").text(); // Using text() to avoid XSS
-        const currentId = currentElement.attr("id");
-        const tid = currentId.split("-")[1];
-        const templateDir = currentElement.find("div.templatedir").text(); // Assuming this is safe
-        const content = currentElement.find('div.templatedir').html(); // Ensure content is sanitized before this
-
-        jQuery('#teamMemberBio .team_member_details .bio-inner h1').text(currentName);
-        jQuery('#teamMemberBio .team_member_details .bio-inner .title').text(currentPosition);
-        const teamImage = jQuery('#teamMemberBio div.team_member_picture div.team_member_image');
-        teamImage.empty();
-        teamImage.append(currentImg); // Ensure this HTML is safe
-        teamBio.html(content); // Ensure content is sanitized before this
-    });
-});
-
-jQuery(document).ready(function ($) {
-
-    $(document).on('click', '.plus', function (e) {
-        const $input = $(this).prev('input.qty');
-        if ($input.length) {
-            const val = parseInt($input.val(), 10) || 0;
-            const step = parseInt($input.attr('step'), 10) || 1;
+</script>
+<script>
+    /* This looks like Quantity JS */
+    jQuery(document).ready(function ($) {
+        $(document).on('click', '.plus', function (e) {
+            $input = $(this).prev('input.qty');
+            var val = parseInt($input.val());
+            var step = $input.attr('step');
+            step = 'undefined' !== typeof (step) ? parseInt(step) : 1;
             $input.val(val + step).change();
-        }
-    });
+        });
 
-    $(document).on('click', '.minus', function (e) {
-        const $input = $(this).next('input.qty');
-        if ($input.length) {
-            const val = parseInt($input.val(), 10) || 0;
-            const step = parseInt($input.attr('step'), 10) || 1;
+        $(document).on('click', '.minus', function (e) {
+            $input = $(this).next('input.qty');
+            var val = parseInt($input.val());
+            var step = $input.attr('step');
+            step = 'undefined' !== typeof (step) ? parseInt(step) : 1;
             if (val > 0) {
-                $input.val(Math.max(0, val - step)).change();
+                $input.val(val - step).change();
             }
-        }
+        });
+        $(document).on('click', '.paid_feature_img,.paid_title,.paid_video,.paid', function (e) {
+            $('form input[name="redirect_to"]').val($(this).attr('data-url'));
+        });
+
     });
 
-    $(document).on('click', '.paid_feature_img, .paid_title, .paid_video, .paid', function (e) {
-        const dataUrl = $(this).attr('data-url');
-        if (dataUrl) {
-            $('form input[name="redirect_to"]').val(dataUrl);
+    // Written by parth on 11th nov
+    jQuery(document).ready(function ($) {
+        $('#searchform').submit(function(e){
+        if($('#s').val() == ''){
+            $('#s').val("Activity");
+        }  
+        });
+        if ($(".subscription-details")[0]){
+            jQuery('.subscription-details').html(jQuery('.subscription-details').html().split('with')[0]);
         }
     });
-
-    $('#searchform').submit(function (e) {
-        const searchInput = $('#s');
-        if (searchInput.length && searchInput.val().trim() === '') {
-            searchInput.val("Activity");
-        }
-    });
-
-    if ($(".subscription-details").length) {
-        const subDetails = $('.subscription-details');
-        const detailsText = subDetails.html().split('with')[0];
-        subDetails.html(detailsText);
-    }
-});
-
 </script>
 <span class="back-top"><i class="fa fa-angle-up"></i></span>
 <?php

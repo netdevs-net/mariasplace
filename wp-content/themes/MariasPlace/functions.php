@@ -6,12 +6,12 @@
  *
  * @package WP_Bootstrap_Starter
  */
-if (function_exists('header_remove')) {
-    header_remove('X-Powered-By'); // PHP 5.3+
-    @ini_set('expose_php', 'off');
-} else {
-    @ini_set('expose_php', 'off');
-}
+// if (function_exists('header_remove')) {
+//     header_remove('X-Powered-By'); // PHP 5.3+
+//     @ini_set('expose_php', 'off');
+// } else {
+//     @ini_set('expose_php', 'off');
+// }
 if (!function_exists('wp_bootstrap_starter_setup')) :
 
     /**
@@ -226,7 +226,7 @@ require get_template_directory() . '/inc/addons/team.php';
 /**
  * Implement the Custom Woocommerce feature.
  */
-require get_template_directory() . '/inc/woocommerce-functions.php';
+// require get_template_directory() . '/inc/woocommerce-functions.php';
 
 function recent_posts_loacked($atts) {
     global $paged;
@@ -967,7 +967,7 @@ function related_post_activities($atts) {
 add_shortcode('related_post', 'related_post_activities');
 function wp_bootstrap_starter_custom_scripts() {
     wp_enqueue_style('custom-style', get_template_directory_uri() . '/inc/assets/css/custom-style.css');
-    if(get_page_template_slug() == "templates/splash-template.php" || is_product()){
+    if(get_page_template_slug() == "templates/splash-template.php"){//|| is_product()
         wp_enqueue_style( 'bulmapress-bulma-style', get_template_directory_uri() . '/inc/assets/frontend/bulmapress/css/bulmapress.css' );
         wp_enqueue_style( 'sass-style', get_template_directory_uri() . '/inc/assets/sass/style.css' );
     }
@@ -975,67 +975,55 @@ function wp_bootstrap_starter_custom_scripts() {
 
 add_action('wp_enqueue_scripts', 'wp_bootstrap_starter_custom_scripts');
 
-add_action('woocommerce_after_quantity_input_field', 'ts_quantity_plus_sign');
+// add_action('woocommerce_after_quantity_input_field', 'ts_quantity_plus_sign');
 
 function ts_quantity_plus_sign() {
     echo '<input class="plus" type="button" value="+">';
 }
 
-add_action('woocommerce_before_quantity_input_field', 'ts_quantity_minus_sign');
+// add_action('woocommerce_before_quantity_input_field', 'ts_quantity_minus_sign');
 
 function ts_quantity_minus_sign() {
     echo '<input class="minus" type="button" value="-">';
 }
 
-function woocommerce_if_login_redirection() {
+function if_login_redirection() {
     if (is_user_logged_in() && (is_page('login') || is_page('registration'))) {
-        $my_account = get_permalink(get_option('woocommerce_myaccount_page_id'));
-        wp_redirect($my_account);
-//        wp_redirect('/welcome-back');
+        // $my_account = get_permalink(get_option('woocommerce_myaccount_page_id'));
+        // wp_redirect($my_account);
+        wp_redirect('/welcome-back');
     }
 }
 
-add_action('wp_head', 'woocommerce_if_login_redirection');
+add_action('wp_head', 'if_login_redirection');
 // remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
-add_filter('woocommerce_order_button_text', 'misha_custom_button_text');
+// add_filter('woocommerce_order_button_text', 'misha_custom_button_text');
 
-function misha_custom_button_text($button_text) {
-    return 'Place Your Order'; // new text is here 
-}
-
-add_action('wp_ajax_nopriv_ajax_login', 'ajax_login');
-
-function ajax_login() {
-
-    // First check the nonce, if it fails the function will break
-    check_ajax_referer('ajax-login-nonce', 'security');
-
-    // Nonce is checked, get the POST data and sign user on
-    $info = array();
-    $info['user_login'] = $_POST['username'];
-    $info['user_password'] = $_POST['password'];
-
-    // if ($_POST['remember'] == "forever") {
-    //     $info['remember'] = true;
-    // } else {
-    //     $info['remember'] = false;
-    // }
-
-    $user_signon = wp_signon($info, false);
-    if (is_wp_error($user_signon)) {
-        echo json_encode(array('loggedin' => false, 'message' => __('Wrong username or password.')));
-    } else {
-        echo json_encode(array('loggedin' => true, 'redirect_to' => $_POST['redirect_to'], 'message' => __('Login successful, redirecting...')));
-    }
-
-    die();
-}
-
-// function free_post($post_id){
-//     global $wpdb;
-//     $results = $wpdb->get_results($wpdb->prepare('SELECT * FROM wp_pmpro_memberships_pages WHERE page_id = %d', $post_id));
-//     return $results;
+// function misha_custom_button_text($button_text) {
+//     return 'Place Your Order'; // new text is here 
 // }
+
+// add_action('wp_ajax_nopriv_ajax_login', 'ajax_login');
+
+// function ajax_login() {
+
+//     // First check the nonce, if it fails the function will break
+//     check_ajax_referer('ajax-login-nonce', 'security');
+
+//     // Nonce is checked, get the POST data and sign user on
+//     $info = array();
+//     $info['user_login'] = $_POST['username'];
+//     $info['user_password'] = $_POST['password'];
+//     $user_signon = wp_signon($info, false);
+//     if (is_wp_error($user_signon)) {
+//         echo json_encode(array('loggedin' => false, 'message' => __('Wrong username or password.')));
+//     } else {
+//         echo json_encode(array('loggedin' => true, 'redirect_to' => $_POST['redirect_to'], 'message' => __('Login successful, redirecting...')));
+//     }
+
+//     die();
+// }
+
 add_action('pre_get_posts', 'free_posts_order');
 
 function free_posts_order($query) {
@@ -1270,24 +1258,24 @@ function custom_woocommerce_checkout_fields($fields) {
 	This code is deprecated and needs to be updated with the new Methods. 
 	
 */
-function bbloomer_simplify_checkout_virtual($fields) {
+// function bbloomer_simplify_checkout_virtual($fields) {
 
-    $only_virtual = true;
+//     $only_virtual = true;
 
-    foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
-        // Check if there are non-virtual products
-        if (!$cart_item['data']->is_virtual())
-            $only_virtual = false;
-    }
+//     foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
+//         // Check if there are non-virtual products
+//         if (!$cart_item['data']->is_virtual())
+//             $only_virtual = false;
+//     }
 
-    if ($only_virtual) {
-        add_filter('woocommerce_enable_order_notes_field', '__return_false');
-    }
+//     if ($only_virtual) {
+//         add_filter('woocommerce_enable_order_notes_field', '__return_false');
+//     }
 
-    return $fields;
-}
+//     return $fields;
+// }
 
-add_filter('woocommerce_checkout_fields', 'bbloomer_simplify_checkout_virtual');
+// add_filter('woocommerce_checkout_fields', 'bbloomer_simplify_checkout_virtual');
 
 
 
@@ -1300,44 +1288,44 @@ function auto_redirect_after_logout() {
 }
 
 // Remove WooCommerce Password Strength
-function iconic_remove_password_strength() {
-    wp_dequeue_script('wc-password-strength-meter');
-}
+// function iconic_remove_password_strength() {
+//     wp_dequeue_script('wc-password-strength-meter');
+// }
 
-add_action('wp_print_scripts', 'iconic_remove_password_strength', 10);
+// add_action('wp_print_scripts', 'iconic_remove_password_strength', 10);
 
-function save_additional_account_details($user_ID) {
+// function save_additional_account_details($user_ID) {
 
-    $pass_cur = !empty($_POST['password_current']) ? $_POST['password_current'] : '';
+//     $pass_cur = !empty($_POST['password_current']) ? $_POST['password_current'] : '';
 
-    $pass1 = !empty($_POST['password_1']) ? $_POST['password_1'] : ''; //
+//     $pass1 = !empty($_POST['password_1']) ? $_POST['password_1'] : ''; //
 
-    $pass2 = !empty($_POST['password_2']) ? $_POST['password_2'] : ''; // 
+//     $pass2 = !empty($_POST['password_2']) ? $_POST['password_2'] : ''; // 
 
-    if (!empty($pass_cur) && empty($pass1) && empty($pass2)) {
-        wc_clear_notices();
-        wc_add_notice(__('Please fill out all password fields.', 'woocommerce'), 'error');
-        $save_pass = false;
-    } elseif (!empty($pass1) && empty($pass_cur)) {
-        wc_clear_notices();
-        wc_add_notice(__('Please enter your current password.', 'woocommerce'), 'error');
-        $save_pass = false;
-    } elseif (!empty($pass1) && empty($pass2)) {
-        wc_clear_notices();
-        wc_add_notice(__('Please re-enter your password.', 'woocommerce'), 'error');
-        $save_pass = false;
-    } elseif ((!empty($pass1) || !empty($pass2) ) && $pass1 !== $pass2) {
-        wc_clear_notices();
-        wc_add_notice(__('New passwords do not match.', 'woocommerce'), 'error');
-        $save_pass = false;
-    } elseif (!empty($pass_cur) && !empty($pass1) && !empty($pass2)) {
-        wc_clear_notices();
-        wc_add_notice(__('Your Password has been successfully changed', 'woocommerce'));
-        $save_pass = true;
-    }
-}
+//     if (!empty($pass_cur) && empty($pass1) && empty($pass2)) {
+//         wc_clear_notices();
+//         wc_add_notice(__('Please fill out all password fields.', 'woocommerce'), 'error');
+//         $save_pass = false;
+//     } elseif (!empty($pass1) && empty($pass_cur)) {
+//         wc_clear_notices();
+//         wc_add_notice(__('Please enter your current password.', 'woocommerce'), 'error');
+//         $save_pass = false;
+//     } elseif (!empty($pass1) && empty($pass2)) {
+//         wc_clear_notices();
+//         wc_add_notice(__('Please re-enter your password.', 'woocommerce'), 'error');
+//         $save_pass = false;
+//     } elseif ((!empty($pass1) || !empty($pass2) ) && $pass1 !== $pass2) {
+//         wc_clear_notices();
+//         wc_add_notice(__('New passwords do not match.', 'woocommerce'), 'error');
+//         $save_pass = false;
+//     } elseif (!empty($pass_cur) && !empty($pass1) && !empty($pass2)) {
+//         wc_clear_notices();
+//         wc_add_notice(__('Your Password has been successfully changed', 'woocommerce'));
+//         $save_pass = true;
+//     }
+// }
 
-add_action('woocommerce_save_account_details', 'save_additional_account_details');
+// add_action('woocommerce_save_account_details', 'save_additional_account_details');
 
 add_filter('wp_nav_menu_items', function ($items, $args) {
 
@@ -1480,27 +1468,27 @@ function mpregister_redirect(){
 ///////////////////////////////////////
 // This is Important Don't Remove it //
 /////////////////////////////////////// 
-add_action('woocommerce_checkout_process', 'deli_products_country_valid');
-function deli_products_country_valid() {
-    $product_val="yes";
-    foreach ( WC()->cart->get_cart() as $cart_item ) {
-        $product = $cart_item['data'];
-        if(!empty($product)){
-            if($product->virtual=="no"){
-                $product_val="no";
-            }
-        }
-    }
-    if($_POST["ship_to_different_address"]==0){
-        if($product_val=="no" && (!empty($_POST['billing_country']) && $_POST['billing_country'] != "US" )){
-            wc_add_notice( __($car."This product is not allowed to purchase outside United States."), 'error' );
-        }
-    }else{
-        if($product_val=="no" && (!empty($_POST['shipping_country']) && $_POST['shipping_country'] != "US" )){
-            wc_add_notice( __($car."This product is not allowed to purchase outside United States. You can change in shipping address."), 'error' );
-        }
-    }
-}
+// add_action('woocommerce_checkout_process', 'deli_products_country_valid');
+// function deli_products_country_valid() {
+//     $product_val="yes";
+//     foreach ( WC()->cart->get_cart() as $cart_item ) {
+//         $product = $cart_item['data'];
+//         if(!empty($product)){
+//             if($product->virtual=="no"){
+//                 $product_val="no";
+//             }
+//         }
+//     }
+//     if($_POST["ship_to_different_address"]==0){
+//         if($product_val=="no" && (!empty($_POST['billing_country']) && $_POST['billing_country'] != "US" )){
+//             wc_add_notice( __($car."This product is not allowed to purchase outside United States."), 'error' );
+//         }
+//     }else{
+//         if($product_val=="no" && (!empty($_POST['shipping_country']) && $_POST['shipping_country'] != "US" )){
+//             wc_add_notice( __($car."This product is not allowed to purchase outside United States. You can change in shipping address."), 'error' );
+//         }
+//     }
+// }
 
 // add_action( 'user_registration_redirect_from_registration_page', 'redirect_back_after_registration', 10, 2 );
 // function redirect_back_after_registration( $redirect_url, $user ) {
@@ -1550,7 +1538,7 @@ function signup_btn( $atts ) {
 	), $atts );
     $label = is_user_logged_in() ? $btn['logged-in-label'] : $btn['logged-out-label'];
     $url = is_user_logged_in() ? $btn['logged-in-url'] : $btn['logged-out-url'];
-    $html .= "<a class='btn ".$btn['class']."' href='".$url."'>" . $label . "</a>";
+    $html = "<a class='btn ".$btn['class']."' href='".$url."'>" . $label . "</a>";
 	return $html;
 }
 add_shortcode( 'mpbutton', 'signup_btn' );
@@ -1620,12 +1608,12 @@ return [
 add_filter( 'wp_check_filetype_and_ext', 'svgs_allow_svg_upload', 10, 4 );
 
 
-function change_heading_text( $items ) {    
-    $items["payment-methods"] = "Card Details"; 
-    return $items;
-}
+// function change_heading_text( $items ) {    
+//     $items["payment-methods"] = "Card Details"; 
+//     return $items;
+// }
 
-add_filter( 'woocommerce_account_menu_items', 'change_heading_text', 99, 1 );
+// add_filter( 'woocommerce_account_menu_items', 'change_heading_text', 99, 1 );
 
 
 function package_button($id){
@@ -1641,86 +1629,6 @@ function get_prod_price($id){
     $_product = wc_get_product( $id );
     return "<sup>$</sup>" . $_product->get_regular_price();     
 }
-
-
-add_shortcode('pricing-packages', 'pricing_packages');
-function pricing_packages(){
-    ob_start();
-    ?>
-            <div style="text-align:center;">
-            <img class="maria-img" src="/wp-content/uploads/2021/04/MariasLogo-2x.png" style="height:6rem;width:auto;" alt="Mariasplace logo">
-            </div>
-            <table class="table _table-responsive pricing-table">
-                <thead>
-                    <tr class="table-heading">
-                        <th class="plans">
-                            <?= get_field("table_heading") ?>
-                        </th>
-                        <th class="header">
-                            <p class="item-maintext" style="font-size:26px;"><?= get_field("table1_heading") ?></p>
-                            <span class="item-price">
-                                <sup>$</sup>0<small class="cust_price">month</small>
-                            </span>
-        <a href="<?= get_field("table_column_1_url") ?>" class="btn btn-pink px-2 py-1 my-1 button is-secondary" style="font-size:15px;">Learn More</a>
-                        </th>
-                        <th class="header">
-                            <p class="item-maintext"><?= get_field("table2_heading") ?></p>
-                            <span class="item-price">
-                                <?= get_prod_price(get_field('table2_product')) ?><small class="cust_price">month</small>
-                            </span>
-        <a href="<?= get_field("table_column_2_url") ?>" class="btn btn-pink px-2 py-1 my-1 button is-secondary" style="font-size:15px;">Learn More</a>
-                        </th>
-                        <th class="header">
-                            <p class="item-maintext"><?= get_field("table3_heading") ?></p>
-                            <span class="item-price">
-                            <?= get_prod_price(get_field('table3_product')) ?><small class="cust_price">month</small>
-                            </span>
-        <a href="<?= get_field("table_column_3_url") ?>" class="btn btn-pink px-2 py-1 my-1 button is-secondary" style="font-size:15px;">Learn More</a>
-                        </th>
-                        <th class="header">
-                            <p class="item-maintext"><?= get_field("table4_heading") ?></p>
-                            <span class="item-price">
-                            TBD
-                            <!-- get_prod_price(get_field('table4_product')) -->
-                            <small class="cust_price">month</small>
-                            </span>
-        <a href="<?= get_field("table_column_4_url") ?>" class="btn btn-pink px-2 py-1 my-1 button is-secondary" target="_blank" style="font-size:15px;">Learn More</a>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php 
-                        if( have_rows('pricing_items') ):
-
-                            while( have_rows('pricing_items') ) : the_row();
-                                ?>
-                                    <tr>
-                                        <td class="row-heading"><?= get_sub_field('pricing_title') ?></td>
-                                        <?php if(get_sub_field('is_free')[0]):?> <td class="data"><img class="h-30p svg-blue" alt="Checked" src="/wp-content/themes/MariasPlace/inc/assets/images/check-mark.svg"></td> <?php else: ?> <td class="data"></td><?php  endif ;?>
-                                        <?php if(get_sub_field('2nd_col')[0]):?> <td class="data data-pink1"><div><img class="h-30p svg-blue" alt="Checked" src="/wp-content/themes/MariasPlace/inc/assets/images/check-mark.svg"></div></td> <?php else: ?> <td class="data data-pink1"><div>&nbsp;</div></td><?php  endif ;?>
-                                        <?php if(get_sub_field('3rd_col')[0]):?> <td class="data data-pink2"><div><img class="h-30p svg-blue" alt="Checked" src="/wp-content/themes/MariasPlace/inc/assets/images/check-mark.svg"></div></td> <?php else: ?> <td class="data data-pink2"><div>&nbsp;</div></td><?php  endif ;?>
-                                        <?php if(get_sub_field('4th_col')[0]):?> <td class="data data-pink3"><div><img class="h-30p svg-blue" alt="Checked" src="/wp-content/themes/MariasPlace/inc/assets/images/check-mark.svg"></div></td> <?php else: ?> <td class="data"></td><?php  endif ;?>                                
-                                    </tr>   
-                                <?php
-                            endwhile;
-                        endif;
-                    ?>            
-                </tbody>
-                <tfoot>
-                    <tr style="border-color:transparent;">
-                        <td class="row-heading"></td>
-                        <td class="text-center data"><a href="<?= get_field("table_column_1_url") ?>" class="learn_more_link text-navyblue button is-primary is-inverted learn-more" style="display:block;margin-top:0.5rem !important;">Learn More</a><a href="/registration" class="btn btn-pink px-3 py-1 button is-secondary my-1" style="margin-top:0.5rem !important;">Join Now</a><span class="d-block country-atext">Available Worldwide.</span></td>
-                        <td class="text-center data"><a href="<?= get_field("table_column_2_url") ?>" class="learn_more_link text-navyblue button is-primary is-inverted learn-more" style="display:block;margin-top:0.5rem !important;">Learn More</a><?php package_button(get_field('table2_product')) ?><span class="d-block country-atext">Available Worldwide.</span></td>
-                        <td class="text-center data"><a href="<?= get_field("table_column_3_url") ?>" class="learn_more_link text-navyblue button is-primary is-inverted learn-more" style="display:block;margin-top:0.5rem !important;">Learn More</a><?php package_button(get_field('table3_product')) ?><span class="d-block country-atext">Available in US only.</span></td>
-                        <td class="text-center data"><a href="<?= get_field("table_column_4_url") ?>" target="_blank" class="learn_more_link text-navyblue button is-primary is-inverted learn-more" style="display:block;margin-top:0.5rem !important;">Learn More</a><a href="/bulk-orders/#bulk-order" target="_blank" class="btn btn-pink px-3 py-1 button is-secondary my-1" style="padding: 0.3rem 0.9rem !important;margin-top:0.5rem !important;">Get Quote</a><span class="d-block country-atext">Available in US only.</span></td>
-                    </tr>
-                </tfoot>
-            </table>    
-    <?php
-    $output = ob_get_clean();
-    return $output;
-}
-add_filter( 'woocommerce_product_description_heading', '__return_null' );
 
 
 /* Creative Activities Shortcode - David */
@@ -1766,3 +1674,23 @@ function creative_activities_func() {
    
 }
 add_shortcode( 'creative_activities_list', 'creative_activities_func');
+
+/**
+ * Enqueue custom CSS for 2-column responsive layout
+ * DISABLED - All 2-column CSS functionality has been removed
+ */
+function mariasplace_enqueue_custom_styles() {
+    // DISABLED - 2-column CSS removed
+    // Code removed to revert all two-column CSS changes
+}
+add_action('wp_enqueue_scripts', 'mariasplace_enqueue_custom_styles', 999); // High priority
+
+/**
+ * Add 2-column CSS directly in head as backup
+ * DISABLED - All 2-column CSS functionality has been removed
+ */
+function mariasplace_add_two_column_css_inline() {
+    // DISABLED - 2-column CSS removed
+    // Code removed to revert all two-column CSS changes
+}
+add_action('wp_head', 'mariasplace_add_two_column_css_inline', 99);

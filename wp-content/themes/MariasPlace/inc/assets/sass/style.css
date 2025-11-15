@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
 Description: Description
-Version: 1.0.0
+Version: 1.0.1
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -276,14 +276,14 @@ footer.site-footer .social-links ul li {
   font-weight: 900;
 }
 .free-library .columns .free-library-cont h2 {
-  font-size: 50px;
+  font-size: 24px !important;
   margin-bottom: 20px;
   line-height: 1;
   color: #000;
 }
 @media (max-width: 540px) {
   .free-library .columns .free-library-cont h2 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 }
 .free-library .columns .free-library-cont span {
@@ -442,13 +442,13 @@ footer.site-footer .social-links ul li {
 .maria-place .columns .maria-place-content {
   margin: auto;
 }
-.maria-place .columns .maria-place-content h2 {
+/*.maria-place .columns .maria-place-content h2 {
   font-size: 60px;
   color: #000;
-}
+}*/
 @media (max-width: 540px) {
   .maria-place .columns .maria-place-content h2 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 }
 .maria-place .columns .maria-place-content h2 strong {
@@ -1121,6 +1121,9 @@ h1, h2, h3, h4, h5, h6 {
 .button.is-secondary.is-inverted:hover {
   background: #DE005D;
   color: #fff;
+}
+.free-library .columns .free-library-cont h2 {
+    font-size: 24px !important;
 }
 
 /*--------------------------------------------------------------

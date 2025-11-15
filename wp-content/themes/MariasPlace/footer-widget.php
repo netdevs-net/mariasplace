@@ -1,6 +1,6 @@
 <?php
 wp_reset_query();
-if (is_single() || is_product() || is_404() || is_search()) {
+if (is_single() || is_404() || is_search()) { //|| is_product() removed for woocommerce
    do_shortcode('[get_social]') ; // Output Content
 }
 ?>

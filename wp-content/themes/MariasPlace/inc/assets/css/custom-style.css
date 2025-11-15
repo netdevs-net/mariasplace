@@ -5426,6 +5426,7 @@ END Sign up lock - Diamond Trivia CSS
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+	padding: 0 1.5rem !important;
 }
 
 @media (max-width: 768px) {

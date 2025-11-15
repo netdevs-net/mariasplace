@@ -1,3 +1,7 @@
+/*! 
+    Theme Name: MariasPlace,
+    Version: 1.2
+*/
 .bg-image {
 	background-image: url(../assets/images/SplashBG.svg);
 	background-size: cover;
@@ -33,12 +37,12 @@
 			}
 
 			h2 {
-				font-size: 50px;
+				font-size: 1.5rem;
 				margin-bottom: 20px;
 				line-height: 1;
 				color: #000;
 				@media(max-width:540px){
-					font-size: 1.8rem;
+					font-size: 1.375rem;
 				}				
 			}
 

@@ -28,7 +28,11 @@
 									<div class="browser-header-mobile free-library-cont">
 										<?php echo  $browse['browse_header']; ?>
 									</div>
-									<img alt="<?php echo get_the_title($image_id);?>" src="<?php echo $browse['browse_image']; ?>">
+									<?php 
+								// 	if(isset($image_id)){
+									 ?>
+									<img alt="" src="<?php echo $browse['browse_image']; ?>">
+									<?php //} ?>
 								</div>
 								<div class="column is-half free-library-cont">
 									<?php echo  $browse['browse_header']; ?>
@@ -209,16 +213,9 @@
 
 
 			</div>
-			<section class="last-section" style="padding:5rem 0 16rem 0;">
-				<h3><?php the_field("recommended_text") ?></h3>
-				<a href="https://naap.info/" target="_blank"><img alt="<?php the_field("recommended_image") ?>" style="width:420px;max-width:100%;padding-left:3rem;padding-right:3rem;" src="<?php the_field("recommended_image") ?>"></a>
+			<section class="last-section" style="padding:5rem 0 16rem 0; font-size: 1.5rem !important; max-width: 60rem !important; min-width: 15rem !important; text-align: left;">
+				<p><?php echo get_field("welcome_letter") ?></p>
 			</section>
-			<!--  -->
-			<!-- <section>
-				<h3><?php //echo get_field["recommended_text"];?></h3>
-				<img src="<?php //echo get_field["recommended_image"]; ?>" style="max-width:300px;"/>
-			</section> -->
-
 		</div>
 	</main><!-- #main -->
 </div><!-- #primary -->

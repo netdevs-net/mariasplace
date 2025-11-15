@@ -54,8 +54,21 @@ if ($post_format == 'video') {
 }
 //CHECK IF PDF IS ATTCHED
 if (!empty(get_field('pdf_url', get_the_id()))) {
-        $PDFbutton = '<div class="w-100 d-block mt-2 mb-5"><a class="btn btn-lg btn-navyblue button is-primary" href="' . str_replace('/preview', '/edit', get_field('pdf_url', get_the_id())) . '" target="_blank">Click here to Print</a></div>';
-        $pdf_Iframe = '<div class="col-12 py-5 mx-auto mb-5 bg-light"><div class="col-12 col-md-8 text-center mx-auto post-pdf-iframe"><iframe id="printf" class="pdf-iframe" src="' . get_field('pdf_url', get_the_id()) . '?usp=drivesdk" title="' . get_field('pdf_url', get_the_id()) . '"></iframe>' . $PDFbutton . '</div></div>';
+        $pdf_url = get_field('pdf_url', get_the_id());
+        // Convert Google Drive URL to embeddable format
+        // If it's a Google Drive URL, convert to embeddable viewer format
+        if (strpos($pdf_url, 'drive.google.com') !== false) {
+            // Extract file ID from various Google Drive URL formats
+            if (preg_match('/\/d\/([a-zA-Z0-9_-]+)/', $pdf_url, $matches)) {
+                $file_id = $matches[1];
+                $pdf_url = 'https://drive.google.com/file/d/' . $file_id . '/preview';
+            } elseif (preg_match('/id=([a-zA-Z0-9_-]+)/', $pdf_url, $matches)) {
+                $file_id = $matches[1];
+                $pdf_url = 'https://drive.google.com/file/d/' . $file_id . '/preview';
+            }
+        }
+        $PDFbutton = '<div class="w-100 d-block mt-2 mb-5"><a class="btn btn-lg btn-navyblue button is-primary" href="' . str_replace('/preview', '/edit', $pdf_url) . '" target="_blank">Click here to Print</a></div>';
+        $pdf_Iframe = '<div class="col-12 py-5 mx-auto mb-5 bg-light"><div class="col-12 col-md-8 text-center mx-auto post-pdf-iframe"><iframe id="printf" class="pdf-iframe" src="' . esc_url($pdf_url) . '" title="PDF Viewer"></iframe>' . $PDFbutton . '</div></div>';
     } else {
         $pdf_Iframe = '';
     }

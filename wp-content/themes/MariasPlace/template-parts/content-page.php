@@ -20,8 +20,8 @@
 
     <div class="entry-content">
         <?php
-        $content = the_content();
-        do_shortcode($content);
+        // the_content() automatically processes shortcodes and outputs content
+        the_content();
         wp_link_pages(array(
             'before' => '<div class="page-links">' . esc_html__('Pages:', 'MariasPlace'),
             'after' => '</div>',

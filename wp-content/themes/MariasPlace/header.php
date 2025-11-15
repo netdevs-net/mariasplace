@@ -115,16 +115,16 @@ $_SESSION['csrf_token'] = $csrf_token;
                                         $items .= '<li id="signup-menu" class="nav-item user-menu"><a class="nav-link button is-primary" href="/registration/">Sign up</a></li>';
                                     }
                                     //_data-toggle="modal" _data-target="#Login"   _data-toggled="modal" _data-targetd="#Registeration" 
-                                    if ($woocommerce) {
-	                                    $cartValue = wc_get_cart_url();	                                    
-                                        $shopping_icon_url = get_template_directory_uri() . '/inc/assets/images/shopping-icon.png';
-                                        $items .= '<li id="shopping-cart" class="nav-item user-menu"><a class="nav-link" id="mobile-cart-link" href="' . $cartValue . '"><img width="20" height="20" src="' . $shopping_icon_url . '" alt="Shopping Icon"/>';
+                                    // if ($woocommerce) {
+	                                   // $cartValue = wc_get_cart_url();	                                    
+                                    //     $shopping_icon_url = get_template_directory_uri() . '/inc/assets/images/shopping-icon.png';
+                                    //     $items .= '<li id="shopping-cart" class="nav-item user-menu"><a class="nav-link" id="mobile-cart-link" href="' . $cartValue . '"><img width="20" height="20" src="' . $shopping_icon_url . '" alt="Shopping Icon"/>';
 
-                                        if ($woocommerce->cart->cart_contents_count > 0) {
-                                            $items .= '<span class="cart-total-items">' . $woocommerce->cart->cart_contents_count . '</span>';
-                                        }
-                                        $items .= '</a></li>';
-                                    }
+                                    //     if ($woocommerce->cart->cart_contents_count > 0) {
+                                    //         $items .= '<span class="cart-total-items">' . $woocommerce->cart->cart_contents_count . '</span>';
+                                    //     }
+                                    //     $items .= '</a></li>';
+                                    // }
 
                                     $search_icon_url = get_template_directory_uri() . '/inc/assets/images/search-icon.png';
                                     $items .= '<li id="mobile-search-item" class="nav-item user-menu"><img width="20" height="20" src="' . $search_icon_url . '" alt="Search Icon"/></li>';
@@ -166,11 +166,15 @@ $_SESSION['csrf_token'] = $csrf_token;
                     } else {
                         $container = 'container';
                     }
-                    if (!is_product()) {
-                        ?>
-                        <div class="<?= $container; ?>">
-                            <div class="row">
+                    // if (!is_product()) {
+                    //
+                    ?>
+                         <!--<div class=" 
+                         //$container;
+                         ">-->
+                             <!--<div class="row">-->
                     <?php
-                        }
+                    //
+                    //     }
                     ?>
                 <?php endif; ?>
