@@ -41,8 +41,7 @@ wp-content/litespeed/
 wp-content/mu-plugins/
 *.cache
 
-# htaccess
-/.htaccess
+# htaccess backups
 .htaccess.backup-*
 .htaccess.restored
 .htaccess.restored.backup-*

@@ -1,0 +1,128 @@
+# BEGIN LSCACHE
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+<IfModule LiteSpeed>
+RewriteEngine on
+CacheLookup on
+RewriteRule .* - [E=Cache-Control:no-autoflush]
+RewriteRule litespeed/debug/.*\.log$ - [F,L]
+RewriteRule \.litespeed_conf\.dat - [F,L]
+
+### marker ASYNC start ###
+RewriteCond %{REQUEST_URI} /wp-admin/admin-ajax\.php
+RewriteCond %{QUERY_STRING} action=async_litespeed
+RewriteRule .* - [E=noabort:1]
+### marker ASYNC end ###
+
+### marker DROPQS start ###
+CacheKeyModify -qs:fbclid
+CacheKeyModify -qs:gclid
+CacheKeyModify -qs:utm*
+CacheKeyModify -qs:_ga
+### marker DROPQS end ###
+
+</IfModule>
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+# END LSCACHE
+# BEGIN NON_LSCACHE
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+### marker BROWSER CACHE start ###
+<IfModule mod_expires.c>
+ExpiresActive on
+ExpiresByType application/pdf A31557600
+ExpiresByType image/x-icon A31557600
+ExpiresByType image/vnd.microsoft.icon A31557600
+ExpiresByType image/svg+xml A31557600
+
+ExpiresByType image/jpg A31557600
+ExpiresByType image/jpeg A31557600
+ExpiresByType image/png A31557600
+ExpiresByType image/gif A31557600
+ExpiresByType image/webp A31557600
+ExpiresByType image/avif A31557600
+
+ExpiresByType video/ogg A31557600
+ExpiresByType audio/ogg A31557600
+ExpiresByType video/mp4 A31557600
+ExpiresByType video/webm A31557600
+
+ExpiresByType text/css A31557600
+ExpiresByType text/javascript A31557600
+ExpiresByType application/javascript A31557600
+ExpiresByType application/x-javascript A31557600
+
+ExpiresByType application/x-font-ttf A31557600
+ExpiresByType application/x-font-woff A31557600
+ExpiresByType application/font-woff A31557600
+ExpiresByType application/font-woff2 A31557600
+ExpiresByType application/vnd.ms-fontobject A31557600
+ExpiresByType font/ttf A31557600
+ExpiresByType font/otf A31557600
+ExpiresByType font/woff A31557600
+ExpiresByType font/woff2 A31557600
+
+</IfModule>
+### marker BROWSER CACHE end ###
+
+## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
+# END NON_LSCACHE
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+Header unset X-Powered-By
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+# Wordfence WAF
+<IfModule LiteSpeed>
+php_value auto_prepend_file '/home/netdevsne/mariasplace.com/wordfence-waf.php'
+</IfModule>
+<IfModule lsapi_module>
+php_value auto_prepend_file '/home/netdevsne/mariasplace.com/wordfence-waf.php'
+</IfModule>
+<Files ".user.ini">
+<IfModule mod_authz_core.c>
+	Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+	Order deny,allow
+	Deny from all
+</IfModule>
+</Files>
+
+# END Wordfence WAF
+
+
+
+# BEGIN Headers Security Advanced & HSTS WP 5.1.6
+<IfModule mod_headers.c>
+Header set Access-Control-Allow-Methods "GET,POST"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+Header set Content-Security-Policy "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:; script-src-elem 'self' 'unsafe-inline' https: data:; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https: wss:; frame-src 'self' https: https://drive.google.com https://*.googleusercontent.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+Header set Cross-Origin-Embedder-Policy "unsafe-none; report-to='default'"
+Header set Cross-Origin-Embedder-Policy-Report-Only "unsafe-none; report-to='default'"
+Header set Cross-Origin-Opener-Policy "unsafe-none"
+Header set Cross-Origin-Opener-Policy-Report-Only "unsafe-none; report-to='default'"
+Header set Cross-Origin-Resource-Policy "cross-origin"
+Header set Permissions-Policy "accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), display-capture=(self), encrypted-media=(), fullscreen=*, geolocation=(self), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=*, picture-in-picture=*, publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=*, usb=(), xr-spatial-tracking=(), gamepad=(), serial=()"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+Header set Strict-Transport-Security "max-age=63072000"
+Header set X-Content-Security-Policy "default-src 'self'; img-src *; media-src * data:;"
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-Permitted-Cross-Domain-Policies "none"
+</IfModule>
+# END Headers Security Advanced & HSTS WP
