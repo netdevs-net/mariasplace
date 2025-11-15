@@ -1,0 +1,118 @@
+/* Responsive 2-column text layout for ALL pages */
+/* Desktop/Tablet (768px+): 2 columns | Mobile (<768px): 1 column */
+
+/* Desktop/Tablet: 2 columns - Apply to all pages */
+@media (min-width: 768px) {
+  /* Standard WordPress entry content - all pages */
+  body .entry-content,
+  body.page-template-default .entry-content,
+  body.single .entry-content,
+  body.page .entry-content {
+    column-count: 2;
+    column-gap: 40px;
+    column-rule: none;
+  }
+  
+  /* Custom theme post content text - this is the actual structure used */
+  body .post-content-text,
+  body .col-md-12.post-content-text,
+  body .post-item-content .post-content-text {
+    column-count: 2 !important;
+    column-gap: 40px !important;
+    column-rule: none !important;
+  }
+  
+  /* Divi Builder text modules - all pages - more specific selectors */
+  body .et_pb_text,
+  body .et_pb_text_inner,
+  body.page-template-default .et_pb_text,
+  body.page-template-default .et_pb_text_inner,
+  body.single .et_pb_text,
+  body.single .et_pb_text_inner,
+  body.page .et_pb_text,
+  body.page .et_pb_text_inner,
+  body .et_pb_section .et_pb_row .et_pb_column .et_pb_text,
+  body .et_pb_section .et_pb_row .et_pb_column .et_pb_text_inner,
+  .et-db #et-boc .et-l .et_pb_text,
+  .et-db #et-boc .et-l .et_pb_text_inner {
+    column-count: 2 !important;
+    column-gap: 40px !important;
+    column-rule: none !important;
+  }
+  
+  /* Prevent column break inside headings - headings span all columns */
+  .post-content-text h1,
+  .post-content-text h2,
+  .post-content-text h3,
+  .post-content-text h4,
+  .post-content-text h5,
+  .post-content-text h6,
+  .et_pb_text h1,
+  .et_pb_text h2,
+  .et_pb_text h3,
+  .et_pb_text h4,
+  .et_pb_text h5,
+  .et_pb_text h6,
+  .entry-content h1,
+  .entry-content h2,
+  .entry-content h3,
+  .entry-content h4,
+  .entry-content h5,
+  .entry-content h6 {
+    column-span: all;
+    break-inside: avoid;
+  }
+  
+  /* Prevent breaking images across columns */
+  .post-content-text img,
+  .et_pb_text img,
+  .entry-content img {
+    break-inside: avoid;
+    max-width: 100%;
+  }
+  
+  /* Prevent breaking lists across columns */
+  .post-content-text ul,
+  .post-content-text ol,
+  .et_pb_text ul,
+  .et_pb_text ol,
+  .entry-content ul,
+  .entry-content ol {
+    break-inside: avoid;
+  }
+  
+  /* Prevent breaking blockquotes across columns */
+  .post-content-text blockquote,
+  .et_pb_text blockquote,
+  .entry-content blockquote {
+    break-inside: avoid;
+  }
+}
+
+/* Mobile: Single column - disable column layout */
+@media (max-width: 767px) {
+  body .entry-content,
+  body.page-template-default .entry-content,
+  body.single .entry-content,
+  body.page .entry-content,
+  body .post-content-text,
+  body .col-md-12.post-content-text,
+  body .post-item-content .post-content-text,
+  body .et_pb_text,
+  body .et_pb_text_inner,
+  body.page-template-default .et_pb_text,
+  body.page-template-default .et_pb_text_inner,
+  body.single .et_pb_text,
+  body.single .et_pb_text_inner,
+  body.page .et_pb_text,
+  body.page .et_pb_text_inner,
+  body .et_pb_section .et_pb_row .et_pb_column .et_pb_text,
+  body .et_pb_section .et_pb_row .et_pb_column .et_pb_text_inner,
+  .et-db #et-boc .et-l .et_pb_text,
+  .et-db #et-boc .et-l .et_pb_text_inner {
+    column-count: 1 !important;
+    column-gap: 0 !important;
+  }
+}
+
+

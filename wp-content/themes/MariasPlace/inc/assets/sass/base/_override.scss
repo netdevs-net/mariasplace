@@ -1,0 +1,30 @@
+.container{
+    @media screen and (min-width: 1088px){
+        max-width: 1440px;
+    }
+}
+
+body, a, h1, h2, h3, h4, h5, h6{
+    font-family: "Nunito";
+}
+
+a{
+    &:hover{
+        color: #322876
+    }
+}
+
+section.section, .section{
+    padding: 3rem 1.5rem;
+    @media(max-width: 767px){
+        padding: 3rem 0;
+    }
+}
+.columns{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #292929;
+}
