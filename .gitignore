@@ -33,6 +33,14 @@ wp-config.php
 # Log files
 *.log
 
+# Cache files
+wp-content/.litespeed_conf.dat
+wp-content/advanced-cache.php
+wp-content/object-cache.php
+wp-content/litespeed/
+wp-content/mu-plugins/
+*.cache
+
 # htaccess
 /.htaccess
 .htaccess.backup-*
