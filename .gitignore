@@ -19,6 +19,7 @@
 
 # Configuration
 wp-config.php
+.secrets
 
 # Example themes
 /wp-content/themes/twenty*/
@@ -34,6 +35,9 @@ wp-config.php
 
 # htaccess
 /.htaccess
+.htaccess.backup-*
+.htaccess.restored
+.htaccess.restored.backup-*
 
 # All plugins
 #
