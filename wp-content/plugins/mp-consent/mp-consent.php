@@ -82,13 +82,13 @@ function mpc_maybe_render_banner() {
 		return;
 	}
 	?>
-<div id="mp-consent-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#1a1a1a;color:#fff;padding:16px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;font:14px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+<div id="mp-consent-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#322876;color:#fff;padding:16px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;font:14px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
 	<div style="flex:1;min-width:240px;">
 		We use cookies for analytics to understand how visitors use this site. You can accept or decline.
 	</div>
 	<div style="display:flex;gap:8px;flex-shrink:0;">
-		<button id="mp-consent-decline" style="background:transparent;color:#fff;border:1px solid #999;border-radius:4px;padding:8px 16px;cursor:pointer;">Decline</button>
-		<button id="mp-consent-accept" style="background:#4a90d9;color:#fff;border:none;border-radius:4px;padding:8px 16px;cursor:pointer;font-weight:600;">Accept</button>
+		<button id="mp-consent-decline" style="background:transparent;color:#fff;border:1px solid #ffffff88;border-radius:4px;padding:8px 16px;cursor:pointer;">Decline</button>
+		<button id="mp-consent-accept" style="background:#DE005D;color:#fff;border:none;border-radius:4px;padding:8px 16px;cursor:pointer;font-weight:600;">Accept</button>
 	</div>
 </div>
 <script>
