@@ -5494,3 +5494,39 @@ END Sign up lock - Diamond Trivia CSS
     max-width: 100% !important;
     padding: 0 !important;
 } */
+/* CLS fix: reserve space for icon images that render with no HTML width/height,
+   causing layout shift as each one loads (flagged by GSC Core Web Vitals — CLS
+   > 0.25 on desktop across nearly every page, since #social is in the footer
+   widget shared site-wide). Sized to match each icon's actual asset dimensions. */
+#social a img {
+	width: 64px;
+	height: 64px;
+	aspect-ratio: 1 / 1;
+}
+.activity .activity-title-img img {
+	aspect-ratio: 1 / 1;
+}
+.activity-title-img img[alt="Quizzes"] {
+	width: 70px;
+	height: 70px;
+}
+.activity-title-img img[alt="Crafts"] {
+	width: 60px;
+	height: 60px;
+}
+.activity-title-img img[alt="Word Games"] {
+	width: 87px;
+	height: 88px;
+}
+.activity-title-img img[alt="Coloring"] {
+	width: 63px;
+	height: 63px;
+}
+.activity-title-img img[alt="Seasonal"] {
+	width: 66px;
+	height: 66px;
+}
+.activity-title-img img[alt="Caregiver Stories"] {
+	width: 60px;
+	height: 60px;
+}
