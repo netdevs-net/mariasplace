@@ -5530,3 +5530,13 @@ END Sign up lock - Diamond Trivia CSS
 	width: 60px;
 	height: 60px;
 }
+
+/* Fix: #footer-promotion's decorative wave (::before, position:absolute,
+   top:-237px) has no pointer-events:none, so on short pages it invisibly
+   overlaps content above it and silently swallows clicks (e.g. the My
+   Account page's Log Out link was unclickable — nothing wrong with the
+   link itself, this decoration was sitting on top of it). Decorative-only
+   element should never intercept pointer events. */
+#footer-promotion::before {
+	pointer-events: none;
+}

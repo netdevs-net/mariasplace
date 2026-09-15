@@ -966,7 +966,7 @@ function related_post_activities($atts) {
 
 add_shortcode('related_post', 'related_post_activities');
 function wp_bootstrap_starter_custom_scripts() {
-    wp_enqueue_style('custom-style', get_template_directory_uri() . '/inc/assets/css/custom-style.css');
+    wp_enqueue_style('custom-style', get_template_directory_uri() . '/inc/assets/css/custom-style.css', array(), filemtime( get_template_directory() . '/inc/assets/css/custom-style.css' ));
     if(get_page_template_slug() == "templates/splash-template.php"){//|| is_product()
         wp_enqueue_style( 'bulmapress-bulma-style', get_template_directory_uri() . '/inc/assets/frontend/bulmapress/css/bulmapress.css' );
         wp_enqueue_style( 'sass-style', get_template_directory_uri() . '/inc/assets/sass/style.css' );
