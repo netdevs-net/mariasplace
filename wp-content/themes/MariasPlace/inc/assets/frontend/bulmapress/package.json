@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-clean": "rimraf css/bulmapress.css css/bulmapress.css.map",
-    "build-sass": "sass --style=compressed bulmapress.sass css/bulmapress.css",
-    "build-watcher": "sass --style=expanded --watch bulmapress.sass css/bulmapress.css",
+    "build-sass": "sass --quiet-deps --load-path=node_modules --silence-deprecation=import --style=compressed bulmapress.sass css/bulmapress.css",
+    "build-watcher": "sass --quiet-deps --load-path=node_modules --silence-deprecation=import --style=expanded --watch bulmapress.sass css/bulmapress.css",
     "build": "npm run build-clean && npm run build-sass",
     "clean-up": "rimraf node_modules",
     "start": "npm install && npm run build-watcher"
