@@ -3,22 +3,18 @@
 ## Development Setup
 
 ### FTP Connection
-FTP connection details are stored in `.secrets` file (gitignored for security).
-
-**Quick Reference:**
-- Host: `txpro1.fcomet.com`
-- Port: `21`
-- Username: `mp@mariasplace.com`
-- Password: See `.secrets` file
+FTP connection details (host, username, password) are stored in `.secrets`
+(gitignored) and are not published here. Ask the site administrator or check
+the team password manager for current credentials.
 
 **Connect via FTP:**
 ```bash
-lftp -u 'mp@mariasplace.com','PASSWORD' -p 21 txpro1.fcomet.com
+lftp -u 'USERNAME','PASSWORD' -p PORT HOST
 ```
 
 ### Repository
 - **GitHub**: https://github.com/netdevs-net/mariasplace
-- **Current Branch**: `live`
+- **Current Branch**: `main`
 - **Live Site Theme**: `wp-content/themes/MariasPlace/`
 
 ### Notes
