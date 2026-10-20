@@ -22,7 +22,8 @@ function mpc_regulated_countries() {
 
 /**
  * Cloudflare adds this header on every proxied request — no lookup needed.
- * Falls back to "unknown" (treated as regulated, the safe default) if absent.
+ * Falls back to "unknown" if absent (e.g. the host doesn't front the site
+ * through Cloudflare, or a proxy layer strips the header).
  */
 function mpc_visitor_country() {
 	if ( ! empty( $_SERVER['HTTP_CF_IPCOUNTRY'] ) ) {
@@ -31,9 +32,20 @@ function mpc_visitor_country() {
 	return 'XX';
 }
 
+/**
+ * Only a country Cloudflare actually reported AND that's in the regulated
+ * list counts as regulated. Treating "unknown" (XX) as regulated meant that
+ * on any host where CF-IPCOUNTRY isn't present for every request, ALL
+ * traffic got analytics_storage denied by default — which is what happened
+ * after the move to Hostinger and is why GA4 stopped getting standard
+ * reporting data (Realtime kept working since it isn't gated the same way).
+ * Unknown now falls back to the same open default the site had before this
+ * plugin existed; only visitors Cloudflare positively identifies as being
+ * in a regulated country get denied-by-default + the banner.
+ */
 function mpc_is_regulated_region() {
 	$country = mpc_visitor_country();
-	return 'XX' === $country || in_array( $country, mpc_regulated_countries(), true );
+	return 'XX' !== $country && in_array( $country, mpc_regulated_countries(), true );
 }
 
 /**
