@@ -5540,3 +5540,30 @@ END Sign up lock - Diamond Trivia CSS
 #footer-promotion::before {
 	pointer-events: none;
 }
+
+/* My Account: "Delete my account" block under Profile Details */
+.mp-delete-account {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+}
+.mp-delete-account p {
+    margin-bottom: .75rem;
+    font-size: .95rem;
+    color: #555;
+}
+.mp-delete-account a.mp-delete-account__btn {
+    display: inline-block;
+    padding: .6rem 1.4rem;
+    border: 1px solid #DE005D;
+    border-radius: 4px;
+    background: #fff;
+    color: #DE005D;
+    text-decoration: none;
+}
+.mp-delete-account a.mp-delete-account__btn:hover,
+.mp-delete-account a.mp-delete-account__btn:focus {
+    background: #DE005D;
+    color: #fff;
+}

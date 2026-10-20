@@ -1694,3 +1694,21 @@ function mariasplace_add_two_column_css_inline() {
     // Code removed to revert all two-column CSS changes
 }
 add_action('wp_head', 'mariasplace_add_two_column_css_inline', 99);
+/**
+ * "Delete my account" button at the base of the My Account > Profile Details form.
+ * Reuses User Registration Pro's own delete-account popup, password check and
+ * notification emails by carrying the plugin's trigger class. Only shown when
+ * URP > Settings > My Account > "Delete Account Action" is not "Disable".
+ */
+function mariasplace_delete_account_button() {
+    if ( ! is_user_logged_in() || 'disable' === get_option( 'user_registration_pro_general_setting_delete_account', 'disable' ) ) {
+        return;
+    }
+    ?>
+    <div class="mp-delete-account">
+        <p>No longer want a Maria's Place account? Deleting it removes your profile and stops all emails from us.</p>
+        <a href="#" class="button mp-delete-account__btn user-registration-MyAccount-navigation-link--delete-account">Delete my account</a>
+    </div>
+    <?php
+}
+add_action( 'user_registration_after_edit_profile_form', 'mariasplace_delete_account_button' );
