@@ -32,15 +32,6 @@ $_SESSION['csrf_token'] = $csrf_token;
         <?php wp_head(); ?>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
 		<!-- <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=6263054c76e56100197a0b91&product=sticky-share-buttons' async='async'></script> -->
-        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98786755-2"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'UA-98786755-2');
-        </script> -->
 <!-- Hotjar Tracking Code for https://mariasplace.com -->
         <script>
             (function(h,o,t,j,a,r){
