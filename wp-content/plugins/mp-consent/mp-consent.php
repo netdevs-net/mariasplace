@@ -14,10 +14,22 @@ define( 'MPC_COOKIE_NAME', 'mp_consent' );
 define( 'MPC_COOKIE_MAX_AGE', 180 * DAY_IN_SECONDS );
 
 /**
- * EEA + UK + CH + NO + IS — same bundle Google's own Consent Mode templates use.
+ * EEA + CH + NO + IS — opt-in consent required before analytics cookies.
+ * GB used to be here too; it moved to mpc_optout_countries() below.
  */
 function mpc_regulated_countries() {
-	return array( 'AT', 'BE', 'BG', 'CH', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HR', 'HU', 'IE', 'IS', 'IT', 'LI', 'LT', 'LU', 'LV', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK' );
+	return array( 'AT', 'BE', 'BG', 'CH', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GR', 'HR', 'HU', 'IE', 'IS', 'IT', 'LI', 'LT', 'LU', 'LV', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK' );
+}
+
+/**
+ * UK: PECR as amended by the Data (Use and Access) Act 2025 exempts cookies
+ * used solely for statistical analytics from consent, provided visitors are
+ * told about them and given a simple, free way to object. So GB defaults to
+ * analytics_storage granted with an opt-out notice, instead of opt-in. Ads
+ * storage stays denied for everyone, which also keeps Google signals off.
+ */
+function mpc_optout_countries() {
+	return array( 'GB' );
 }
 
 /**
@@ -46,6 +58,10 @@ function mpc_visitor_country() {
 function mpc_is_regulated_region() {
 	$country = mpc_visitor_country();
 	return 'XX' !== $country && in_array( $country, mpc_regulated_countries(), true );
+}
+
+function mpc_is_optout_region() {
+	return in_array( mpc_visitor_country(), mpc_optout_countries(), true );
 }
 
 /**
@@ -82,25 +98,36 @@ gtag('consent', 'default', {
 }
 
 /**
- * Banner only for regulated visitors who haven't chosen yet. Everyone else
- * (already granted by default, or already chose) gets nothing extra.
+ * Banner for regulated (opt-in) and GB (opt-out notice) visitors who haven't
+ * chosen yet. Everyone else (granted by default, or already chose) gets
+ * nothing extra.
  */
 add_action( 'wp_footer', 'mpc_maybe_render_banner' );
 function mpc_maybe_render_banner() {
-	if ( ! mpc_is_regulated_region() ) {
+	$optout = mpc_is_optout_region();
+	if ( ! $optout && ! mpc_is_regulated_region() ) {
 		return;
 	}
 	if ( isset( $_COOKIE[ MPC_COOKIE_NAME ] ) ) {
 		return;
 	}
+	if ( $optout ) {
+		$message       = 'We use Google Analytics cookies only to count visits and see which pages are useful, so we can improve the site. We don\'t use them for advertising. You can opt out at any time.';
+		$decline_label = 'Opt out';
+		$accept_label  = 'OK';
+	} else {
+		$message       = 'We use cookies for analytics to understand how visitors use this site. You can accept or decline.';
+		$decline_label = 'Decline';
+		$accept_label  = 'Accept';
+	}
 	?>
 <div id="mp-consent-banner" role="dialog" aria-label="Cookie consent" style="position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#322876;color:#fff;padding:16px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;font:14px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
 	<div style="flex:1;min-width:240px;">
-		We use cookies for analytics to understand how visitors use this site. You can accept or decline.
+		<?php echo esc_html( $message ); ?>
 	</div>
 	<div style="display:flex;gap:8px;flex-shrink:0;">
-		<button id="mp-consent-decline" style="background:transparent;color:#fff;border:1px solid #ffffff88;border-radius:4px;padding:8px 16px;cursor:pointer;">Decline</button>
-		<button id="mp-consent-accept" style="background:#DE005D;color:#fff;border:none;border-radius:4px;padding:8px 16px;cursor:pointer;font-weight:600;">Accept</button>
+		<button id="mp-consent-decline" style="background:transparent;color:#fff;border:1px solid #ffffff88;border-radius:4px;padding:8px 16px;cursor:pointer;"><?php echo esc_html( $decline_label ); ?></button>
+		<button id="mp-consent-accept" style="background:#DE005D;color:#fff;border:none;border-radius:4px;padding:8px 16px;cursor:pointer;font-weight:600;"><?php echo esc_html( $accept_label ); ?></button>
 	</div>
 </div>
 <script>
@@ -109,6 +136,17 @@ function mpc_maybe_render_banner() {
 		document.cookie = '<?php echo esc_js( MPC_COOKIE_NAME ); ?>=' + choice + ';max-age=<?php echo (int) MPC_COOKIE_MAX_AGE; ?>;path=/;SameSite=Lax';
 		if (window.gtag) {
 			gtag('consent', 'update', { 'analytics_storage': choice === 'granted' ? 'granted' : 'denied' });
+		}
+		if (choice === 'denied') {
+			// GB visitors already have _ga cookies from the granted default;
+			// objecting means we stop storing them, so clear what's there.
+			document.cookie.split(';').forEach(function (c) {
+				var name = c.split('=')[0].trim();
+				if (name.indexOf('_ga') === 0) {
+					document.cookie = name + '=;max-age=0;path=/';
+					document.cookie = name + '=;max-age=0;path=/;domain=.' + location.hostname.replace(/^www\./, '');
+				}
+			});
 		}
 		var banner = document.getElementById('mp-consent-banner');
 		if (banner) banner.remove();
@@ -122,6 +160,19 @@ function mpc_maybe_render_banner() {
 })();
 </script>
 	<?php
+}
+
+/**
+ * [mp_cookie_settings] — link that forgets the stored choice and reloads, so
+ * the banner shows again. Gives GB visitors who clicked OK a lasting way to
+ * opt out (and lets anyone change their mind). Put it in the privacy policy
+ * and/or footer.
+ */
+add_shortcode( 'mp_cookie_settings', 'mpc_cookie_settings_shortcode' );
+function mpc_cookie_settings_shortcode( $atts ) {
+	$atts = shortcode_atts( array( 'label' => 'Cookie settings' ), $atts, 'mp_cookie_settings' );
+	$js   = "document.cookie='" . esc_js( MPC_COOKIE_NAME ) . "=;max-age=0;path=/';location.reload();return false;";
+	return '<a href="#" onclick="' . esc_attr( $js ) . '">' . esc_html( $atts['label'] ) . '</a>';
 }
 
 /**
