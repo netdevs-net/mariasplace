@@ -418,6 +418,15 @@ if ($free_content == 1 || $flag == 1 || $post_type != 'post' || $um_id != 0) {
             echo '<div class="w-100 d-block text-center mb-4"><a class="btn btn-lg btn-navyblue button is-primary" href="' . esc_url(str_replace('/preview', '/edit', $pdf_url)) . '" target="_blank" rel="noopener">Print this activity</a></div>';
         }
         //echo sharethis_inline_buttons();
+        // Script-free share links (no third-party JS): Facebook, Pinterest, email.
+        $share_url   = rawurlencode(get_permalink());
+        $share_title = rawurlencode(wp_strip_all_tags(get_the_title()));
+        $share_img   = rawurlencode((string) get_the_post_thumbnail_url(get_the_ID(), 'large'));
+        echo '<div class="w-100 d-flex justify-content-center flex-wrap mb-4 mp-share">'
+            . '<a class="btn btn-navyblue mx-1 mb-2" href="https://www.facebook.com/sharer/sharer.php?u=' . $share_url . '" target="_blank" rel="noopener">Share on Facebook</a>'
+            . '<a class="btn btn-navyblue mx-1 mb-2" href="https://www.pinterest.com/pin/create/button/?url=' . $share_url . '&media=' . $share_img . '&description=' . $share_title . '" target="_blank" rel="noopener">Pin it</a>'
+            . '<a class="btn btn-navyblue mx-1 mb-2" href="mailto:?subject=' . $share_title . '&body=' . $share_url . '">Email</a>'
+            . '</div>';
         ?>
         <div class="post-item-body">
             <?php echo $html_out; ?>
