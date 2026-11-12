@@ -4,4 +4,4 @@ Disallow: /dlm_uploads/
 User-agent: *
 Allow: /
 
-Sitemap: https://mp41dev.wpengine.com/sitemap_index.xml
+Sitemap: https://mariasplace.com/sitemap_index.xml

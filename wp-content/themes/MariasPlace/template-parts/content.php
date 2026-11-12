@@ -413,6 +413,10 @@ if ($free_content == 1 || $flag == 1 || $post_type != 'post' || $um_id != 0) {
             echo '<div class="col-12 col-md-10 mx-auto"><div class="font-24">' . get_field('heading_2', get_the_id()) . '</div></div>';
         }
         echo '</div>';
+        // Print/download shortcut near the top so phone users do not scroll past the PDF frame.
+        if (!empty($pdf_url)) {
+            echo '<div class="w-100 d-block text-center mb-4"><a class="btn btn-lg btn-navyblue button is-primary" href="' . esc_url(str_replace('/preview', '/edit', $pdf_url)) . '" target="_blank" rel="noopener">Print this activity</a></div>';
+        }
         //echo sharethis_inline_buttons();
         ?>
         <div class="post-item-body">
